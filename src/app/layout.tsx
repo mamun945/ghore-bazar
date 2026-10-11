@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavbarPage from "./components/Navbar";
+import NavlistPage from "./components/Navlist";
+import MarqueePage from "./components/Marquee";
+import { ToastContainer } from "react-toastify";
+import FooterPage from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +28,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NavbarPage></NavbarPage>
+        <NavlistPage></NavlistPage>
+        <MarqueePage></MarqueePage>
+        {children}
+        <FooterPage></FooterPage>
+         <ToastContainer />
+      </body>
     </html>
   );
 }
