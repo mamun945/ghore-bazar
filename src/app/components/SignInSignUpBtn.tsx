@@ -144,14 +144,14 @@ const SignInSignUpBtnPage = () => {
             ) : (
                 <div className="flex items-center gap-2.5">
                     <Link
-                        href="/signin"
+                        href="/signIn"
                         className="rounded-xl px-4 py-2 text-xs font-semibold text-emerald-600 transition-all hover:bg-emerald-500/10 hover:text-emerald-500 sm:text-sm"
                     >
                         সাইন ইন
                     </Link>
 
                     <Link
-                        href="/signup"
+                        href="/signUp"
                         className="rounded-xl bg-emerald-500 px-4 py-2 text-xs font-bold text-slate-950 shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.02] hover:bg-emerald-400 active:scale-[0.98] sm:text-sm"
                     >
                         সাইন আপ
