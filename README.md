@@ -1,7 +1,9 @@
 ####Project Name
+
 BazarDor
 
 ####Short Description
+
 BazarDor is a web-based market price tracking platform that helps users explore the latest prices of essential commodities in Bangladesh. It displays prices of rice, lentils, oil, vegetables, fish, meat, eggs, dairy products, and spices, along with price changes to help users make informed shopping decisions.
 
 
@@ -14,6 +16,7 @@ BazarDor is a web-based market price tracking platform that helps users explore 
 - Vercel (Deployment)
 
 ####Five Key Features
+
 1. Daily Market Prices: Displays prices of essential commodities in one place.
 2. Category-Based Filtering: Organizes products into categories such as rice, lentils, oil, vegetables, fish, meat, eggs, dairy, and spices.
 3. Price Change Tracking: Highlights products whose prices have increased or decreased.
