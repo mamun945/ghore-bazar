@@ -31,5 +31,5 @@ export interface IProduct {
   lastWeek: number;
   lastMonth: number;
   change: IPriceChange;
-  market?:alter[]
+  markets?:alter[]
 }
