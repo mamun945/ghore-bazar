@@ -11,7 +11,7 @@ const ProductCategorisPage = async ({ params }: { params: Promise<{ productId: s
     const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`);
     const product: IProduct = await res.json();
     const isPriceUp = product.change?.dir === 'up';
-
+    
     if (!product?.id) {
         return (
             <div className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 my-12">
@@ -48,11 +48,11 @@ const ProductCategorisPage = async ({ params }: { params: Promise<{ productId: s
     }
 
     // হিসাব করার জন্য সব বাজারের সর্বনিম্ন ও সর্বাধিক দামগুলোর অ্যারে তৈরি
-    const minPrices = product?.markets?.map((m) => m.min) || [0];
-    const maxPrices = product?.markets?.map((m) => m.max) || [0];
+    const minPrices:number[] = product?.market?.map((m:alter) => m.min) || [0];
+    const maxPrices:number[] = product?.market?.map((m:alter) => m.max) || [0];
     const overallMin = Math.min(...minPrices);
     const overallMax = Math.max(...maxPrices);
-    const overallAvg = Math.round((overallMin + overallMax) / 2);
+    // const overallAvg = Math.round((overallMin + overallMax) / 2);
 
     return (
         <div className="container mx-auto my-6 px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -154,7 +154,7 @@ const ProductCategorisPage = async ({ params }: { params: Promise<{ productId: s
                                     <Table.Column className="font-bold text-gray-600 py-4 px-4 text-sm">গড়</Table.Column>
                                 </Table.Header>
                                 <Table.Body>
-                                    {product?.markets?.map((market: alter, index: number) => (
+                                    {product?.market?.map((market: alter, index: number) => (
                                         <Table.Row key={index} className="hover:bg-gray-50/60 transition-colors border-b border-gray-50 last:border-none">
                                             <Table.Cell className="font-semibold text-gray-800 py-4 px-4">{market.market}</Table.Cell>
                                             <Table.Cell className="text-gray-600 py-4 px-4">{market.division}</Table.Cell>
